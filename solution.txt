@@ -1,0 +1,88 @@
+----- solution 1 -------
+
+import 'dart:io';
+
+void main() {
+  print("What is your name? ");
+  String? name = stdin.readLineSync();
+
+  print("How old are you? ");
+  int age = int.parse(stdin.readLineSync()!);
+
+  String message = yearsTo100(name!, age);
+  print(message);
+}
+
+String yearsTo100(String name, int age) {
+  int a = 100;
+  int yearsLeft = a - age;
+  return "Hi $name! You turned 100 in  ${yearsLeft.abs()} years ago!";
+}
+
+------ Solution 2 --------
+import 'dart:io';
+
+void main() {
+  print('Enter a number: ');
+  int? number = int.parse(stdin.readLineSync()!);
+  if (number % 2 == 0) {
+    print('$number is even.');
+  } else {
+    print('$number is odd.');
+  }
+}
+
+-------- solution 3 -------
+
+void main() {
+  List<int> a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
+  for (int num in a) {
+    if (num < 5) {
+      print(num);
+    }
+  }
+}
+
+
+---------- solution 4 --------
+
+import 'dart:io';
+
+List<int> findDivisors(int number) {
+  List<int> divisors = [];
+  for (int i = 1; i <= number; i++) {
+    if (number % i == 0) {
+      divisors.add(i);
+    }
+  }
+  return divisors;
+}
+
+void main() {
+  print('Enter a number: ');
+  int number = int.parse(stdin.readLineSync()!);
+
+  List<int> divisors = findDivisors(number);
+
+  print('Divisors of $number are: $divisors');
+}
+
+
+------- solution 5 --------
+
+void main() {
+  List<int> a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
+  List<int> b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+  List<int> commonElements = [];
+
+  for (int num in a) {
+    if (b.contains(num) && !commonElements.contains(num)) {
+      commonElements.add(num);
+    }
+  }
+  print(commonElements);
+}
+
+
+
